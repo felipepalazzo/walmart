@@ -1,3 +1,15 @@
-<div *ngFor="let product of products">
-  <span>{{ product.title }}</span>
+<div class="container">
+  <div class="row m-bottom-sm" *ngFor="let product of productGroup">
+    <section *ngFor="let p of product" class="four columns product-box">
+      <div class="product-box__header">
+        <span class="truncate-v">{{ p.title }}</span>
+      </div>
+      <div class="text-center">
+        <img [src]="p.image" class="product-box__image" />
+      </div>
+      <span>{{ p.currency }} {{ p.listPrice }}</span>
+      <span>{{ p.currency }} {{ p.price }}</span>
+      <price-detail [price]="getLastOf(p.installments)"></price-detail>
+    </section>
+  </div>
 </div>

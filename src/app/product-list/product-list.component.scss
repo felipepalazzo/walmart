@@ -1,0 +1,17 @@
+@import '../../assets/styles/variables';
+
+.product-box {
+  border: 1px solid $grey;
+
+  .product-box__header {
+    color: $aqua;
+    font-size: 13px;
+    margin: auto;
+    max-width: 250px;
+    padding-top: 25px;
+  }
+
+  .product-box__image {
+    max-width: 180px;
+  }
+}

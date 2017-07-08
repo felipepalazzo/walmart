@@ -1,0 +1,27 @@
+.container::after,
+.row::after,
+.u-cf {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.truncate-v {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.m-bottom-sm {
+  margin-bottom: 15px;
+}

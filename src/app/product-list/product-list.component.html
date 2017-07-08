@@ -7,9 +7,27 @@
       <div class="text-center">
         <img [src]="p.image" class="product-box__image" />
       </div>
-      <span>{{ p.currency }} {{ p.listPrice }}</span>
-      <span>{{ p.currency }} {{ p.price }}</span>
-      <price-detail [price]="getLastOf(p.installments)"></price-detail>
+      <div class="text-center p-bottom-xs">
+        <ul class="product-box__rating-list">
+          <li
+            *ngFor="let item of totalStars; let i = index"
+            class="product-box__rating-list-item">
+            <i class="fa" [ngClass]="{
+              'fa-star': i+1 <= p.rating,
+              'fa-star-o': i+1 > p.rating
+            }"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="product-box__footer">
+        <div class="text-strike font-sm text-grey">
+          {{ p.currency }} {{ p.listPrice }}
+        </div>
+        <div class="text-green font-md product-box__footer-caption">
+          {{ p.currency }} {{ p.price }}
+        </div>
+        <price-detail [price]="getLastOf(p.installments)"></price-detail>
+      </div>
     </section>
   </div>
 </div>

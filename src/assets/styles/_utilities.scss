@@ -1,3 +1,5 @@
+@import '../../assets/styles/variables';
+
 .container::after,
 .row::after,
 .u-cf {
@@ -8,6 +10,26 @@
 
 .text-center {
   text-align: center;
+}
+
+.text-strike {
+  text-decoration: line-through;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-green {
+  color: $green;
+}
+
+.font-sm {
+  font-size: 11px;
+}
+
+.font-md {
+  font-size: 16px;
 }
 
 .truncate-v {
@@ -24,4 +46,8 @@
 
 .m-bottom-sm {
   margin-bottom: 15px;
+}
+
+.p-bottom-xs {
+  padding-bottom: 10px;
 }

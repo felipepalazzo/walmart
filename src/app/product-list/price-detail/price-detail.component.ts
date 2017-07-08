@@ -5,9 +5,11 @@ import { Price } from '../../models/price.interface';
   selector: 'price-detail',
   styleUrls: ['./price-detail.component.scss'],
   template: `
-    <span>{{ price.currency }}</span>
-    <span>{{ price.installmentAmount }}</span>x
-    <span>{{ price.valuePerInstallment }}</span>
+    <div class="font-sm text-grey">
+      <span>{{ price.installmentAmount }}</span>x
+      <span>{{ price.currency }}</span>
+      <span>{{ price.valuePerInstallment }}</span> sem juros
+    </div>
   `,
 })
 export class PriceDetailComponent {

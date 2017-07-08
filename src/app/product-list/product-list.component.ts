@@ -11,12 +11,14 @@ import _ from "lodash";
 export class ProductListComponent implements OnInit {
   productGroup: Product[];
   groupBy: number = 3;
+  maxRate: number = 5;
+  totalStars = _.range(this.maxRate);
   constructor(private productListService: ProductListService) { }
 
   ngOnInit() {
     this.productListService
      .getOrders()
-     .subscribe((data: Product[]) => this.productGroup = _.chunk(data, 3))
+     .subscribe((data: Product[]) => this.productGroup = _.chunk(data, this.groupBy))
   }
 
   getLastOf(group: Array<any>) {

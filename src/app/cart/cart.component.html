@@ -8,14 +8,20 @@
       ({{ getTotalAmount(products) }} itens)
     </ng-template>
   </div>
-  <ul>
-    <li *ngFor="let product of products">
-      <img [src]="product.image">
-      <span>{{ product.title }}</span>
-      <span>Quantidade: {{ product.amount }}</span>
-      <span (click)="remove(product)">
-        <i class="fa fa-times"></i>
-      </span>
+  <ul class="side-menu__list">
+    <li *ngFor="let product of products" class="side-menu__list-item u-cf">
+      <div class="pull-left">
+        <img [src]="product.image" class="side-menu__list-image">
+      </div>
+      <div class="pull-left side-menu__text">
+        <div class="text-blue truncate side-menu__caption">{{ product.title }}</div>
+        <span class="text-grey">Quantidade: {{ product.amount }}</span>
+      </div>
+      <div class="pull-right side-menu__remove">
+        <span (click)="remove(product)" class="text-red">
+          <i class="fa fa-times"></i>
+        </span>
+      </div>
     </li>
   </ul>
 </nav>

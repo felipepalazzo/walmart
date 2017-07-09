@@ -20,8 +20,16 @@
   color: $grey;
 }
 
+.text-blue {
+  color: $blue;
+}
+
 .text-green {
   color: $green;
+}
+
+.text-red {
+  color: $red;
 }
 
 .font-sm {
@@ -42,6 +50,12 @@
   justify-content: center;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .truncate-v {
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -52,6 +66,14 @@
 
 .inline-block {
   display: inline-block;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
 }
 
 .m-bottom-sm {

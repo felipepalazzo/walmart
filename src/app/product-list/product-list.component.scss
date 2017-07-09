@@ -97,6 +97,10 @@
       padding-left: 20px;
       padding-right: 20px;
       visibility: hidden;
+
+      &:hover {
+        background-color: darken($green, 10%);
+      }
     }
   }
 

@@ -20,4 +20,26 @@
     height: 41px;
     width: 174px;
   }
+
+  .top-menu__cart {
+    background-color: $orange;
+    color: $white;
+    float: right;
+    font-size: 30px;
+    height: 100%;
+    position: relative;
+    width: 68px;
+  }
+
+  .top-menu__counter {
+    background-color: $red;
+    color: $white;
+    font-size: 11px;
+    height: 15px;
+    line-height: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+  }
 }

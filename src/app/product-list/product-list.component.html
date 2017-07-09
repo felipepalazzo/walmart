@@ -1,32 +1,46 @@
 <div class="container">
-  <div class="row m-bottom-sm" *ngFor="let product of productGroup">
-    <section *ngFor="let p of product" class="four columns product-box">
+  <div class="row m-bottom-md" *ngFor="let product of productGroup">
+    <section
+      *ngFor="let p of product"
+      class="four columns product-box"
+      (mouseleave)="showDetails($event, false)"
+      (mouseenter)="showDetails($event, true)">
       <div class="product-box__header">
-        <span class="truncate-v">{{ p.title }}</span>
+        <span class="truncate-v product-box__header-text">{{ p.title }}</span>
       </div>
-      <div class="text-center">
-        <img [src]="p.image" class="product-box__image" />
-      </div>
-      <div class="text-center p-bottom-xs">
-        <ul class="product-box__rating-list">
-          <li
-            *ngFor="let item of totalStars; let i = index"
-            class="product-box__rating-list-item">
-            <i class="fa" [ngClass]="{
-              'fa-star': i+1 <= p.rating,
-              'fa-star-o': i+1 > p.rating
-            }"></i>
-          </li>
-        </ul>
+      <div class="product-box__body">
+        <div class="text-center">
+          <img [src]="p.image" class="product-box__image" />
+        </div>
+        <div class="text-center">
+          <ul class="product-box__rating-list">
+            <li
+              *ngFor="let item of totalStars; let i = index"
+              class="product-box__rating-list-item">
+              <i class="fa" [ngClass]="{
+                'fa-star': i+1 <= p.rating,
+                'fa-star-o': i+1 > p.rating
+              }"></i>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="product-box__footer">
-        <div class="text-strike font-sm text-grey">
-          {{ p.currency }} {{ p.listPrice }}
+        <div class="product-box__footer-text">
+          <div class="text-strike font-sm text-grey">
+            {{ p.currency }} {{ p.listPrice }}
+          </div>
+          <div class="text-green font-md product-box__footer-caption">
+            {{ p.currency }} {{ p.price }}
+          </div>
+          <price-detail [price]="getLastOf(p.installments)"></price-detail>
         </div>
-        <div class="text-green font-md product-box__footer-caption">
-          {{ p.currency }} {{ p.price }}
+        <div class="product-box__footer-cart abs-center">
+          <i class="fa fa-cart-arrow-down"></i>
         </div>
-        <price-detail [price]="getLastOf(p.installments)"></price-detail>
+      </div>
+      <div class="product-box__extra text-center">
+        + {{ p.brand }}
       </div>
     </section>
   </div>

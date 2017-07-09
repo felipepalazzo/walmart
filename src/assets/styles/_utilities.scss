@@ -32,6 +32,12 @@
   font-size: 16px;
 }
 
+.abs-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .truncate-v {
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -46,6 +52,10 @@
 
 .m-bottom-sm {
   margin-bottom: 15px;
+}
+
+.m-bottom-md {
+  margin-bottom: 20px;
 }
 
 .p-bottom-xs {

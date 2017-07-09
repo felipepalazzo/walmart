@@ -6,7 +6,7 @@ import { Price } from '../../models/price.interface';
   styleUrls: ['./price-detail.component.scss'],
   template: `
     <div class="font-sm text-grey">
-      <span>{{ price.installmentAmount }}</span>x
+      <span>{{ price.installmentAmount }}</span>x de
       <span>{{ price.currency }}</span>
       <span>{{ price.valuePerInstallment }}</span> sem juros
     </div>

@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
   productGroup: Product[];
   groupBy: number = 3;
   maxRate: number = 5;
+  isVisible: boolean = false;
   totalStars = _.range(this.maxRate);
   constructor(private productListService: ProductListService) { }
 
@@ -23,6 +24,15 @@ export class ProductListComponent implements OnInit {
 
   getLastOf(group: Array<any>) {
     return _.last(group)
+  }
+
+  showDetails(evt: any, isVisible: boolean) {
+    let focusIn = 'focus';
+    if (isVisible) {
+      evt.target.classList.add(focusIn);
+    } else {
+      evt.target.classList.remove(focusIn);
+    }
   }
 
 }

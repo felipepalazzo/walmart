@@ -1,14 +1,57 @@
 @import '../../assets/styles/variables';
 
 .product-box {
-  border: 1px solid $lightgrey;
+  cursor: pointer;
+  position: relative;
+
+  &.focus {
+    .product-box__footer {
+      border-right-color: $green;
+    }
+
+    .product-box__footer .product-box__footer-cart {
+      visibility: visible;
+    }
+
+    .product-box__extra {
+      visibility: visible;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    box-shadow: 0 0 15px 0 $shadow;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 120ms ease-in;
+    width: 100%;
+    z-index: -1;
+  }
 
   .product-box__header {
+    border: 1px solid $lightgrey;
+    border-bottom: 0;
     color: $aqua;
     font-size: 13px;
-    margin: auto;
-    max-width: 250px;
     padding-top: 25px;
+
+    .product-box__header-text {
+      margin: auto;
+      max-width: 250px;
+    }
+  }
+
+  .product-box__body {
+    border-left: 1px solid $lightgrey;
+    border-right: 1px solid $lightgrey;
   }
 
   .product-box__image {
@@ -16,6 +59,9 @@
   }
 
   .product-box__rating-list {
+    border-bottom: 1px solid $lightgrey;
+    padding-bottom: 10px;
+
     .fa-star {
       color: $gold;
     }
@@ -30,12 +76,40 @@
   }
 
   .product-box__footer {
-    border-top: 1px solid $lightgrey;
-    padding: 5px;
+    border: 1px solid $lightgrey;
+    border-top: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .product-box__footer-text {
+      padding: 5px;
+    }
 
     .product-box__footer-caption {
       padding-bottom: 2px;
       padding-top: 2px;
     }
+
+    .product-box__footer-cart {
+      background-color: $green;
+      color: $white;
+      font-size: 25px;
+      padding-left: 20px;
+      padding-right: 20px;
+      visibility: hidden;
+    }
+  }
+
+  .product-box__extra {
+    background-color: $lightgrey;
+    border-top: 0;
+    color: $aqua;
+    font-size: 13px;
+    height: 25px;
+    line-height: 25px;
+    position: relative;
+    visibility: hidden;
+    width: 100%;
+    z-index: 2;
   }
 }

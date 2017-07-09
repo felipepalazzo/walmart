@@ -3,6 +3,7 @@
 .side-menu {
   background-color: $white;
   height: 100%;
+  overflow-x: auto;
   position: fixed;
   right: 0;
   transform: translateX($sidemenu-width);

@@ -20,6 +20,8 @@ export class TopMenuComponent implements OnInit {
   }
   toggleMenu() {
     this.cartService.toggleCart();
+    let bodyStyle = this.isFixed() ? 'hidden' : '';
+    document.body.style.overflow = bodyStyle;
   }
   isFixed() {
     return this.cartService.getCartStatus();

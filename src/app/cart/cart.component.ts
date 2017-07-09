@@ -27,5 +27,7 @@ export class CartComponent implements OnInit {
   }
   toggleMenu() {
     this.cartService.toggleCart();
+    let bodyStyle = this.isVisible() ? 'hidden' : '';
+    document.body.style.overflow = bodyStyle;
   }
 }

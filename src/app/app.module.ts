@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PriceDetailComponent } from './product-list/price-detail/price-detail.component';
+import { CartComponent } from './cart/cart.component';
 
+import { CartService } from './cart/cart.service';
 import { ProductListService } from './product-list/product-list.service';
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
     TopMenuComponent,
     ProductListComponent,
     PriceDetailComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ const routes: Routes = [
   ],
   providers: [
     ProductListService,
+    CartService,
   ],
   bootstrap: [AppComponent]
 })

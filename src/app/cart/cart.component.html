@@ -1,0 +1,11 @@
+carrinho:
+<ul>
+  <li *ngFor="let product of products">
+    <img [src]="product.image">
+    <span>{{ product.title }}</span>
+    <span>Quantidade: {{ product.amount }}</span>
+    <span (click)="remove(product)">
+      <i class="fa fa-times"></i>
+    </span>
+  </li>
+</ul>

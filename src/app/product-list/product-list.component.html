@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row m-bottom-md" *ngFor="let product of productGroup">
+  <div class="row m-bottom-sm" *ngFor="let product of productGroup">
     <section
       *ngFor="let p of product"
       class="four columns product-box"
@@ -35,7 +35,7 @@
           </div>
           <price-detail [price]="getLastOf(p.installments)"></price-detail>
         </div>
-        <div class="product-box__footer-cart abs-center">
+        <div class="product-box__footer-cart abs-center" (click)="onClick(p)">
           <i class="fa fa-cart-arrow-down"></i>
         </div>
       </div>

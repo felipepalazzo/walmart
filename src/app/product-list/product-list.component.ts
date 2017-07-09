@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product.interface';
 import { ProductListService } from './product-list.service';
+import { CartService } from '../cart/cart.service';
 import _ from "lodash";
 
 @Component({
@@ -14,7 +15,10 @@ export class ProductListComponent implements OnInit {
   maxRate: number = 5;
   isVisible: boolean = false;
   totalStars = _.range(this.maxRate);
-  constructor(private productListService: ProductListService) { }
+  constructor(
+    private productListService: ProductListService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit() {
     this.productListService
@@ -33,6 +37,10 @@ export class ProductListComponent implements OnInit {
     } else {
       evt.target.classList.remove(focusIn);
     }
+  }
+
+  onClick(product: Product){
+    this.cartService.add(product);
   }
 
 }

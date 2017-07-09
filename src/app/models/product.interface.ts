@@ -8,5 +8,6 @@ export interface Product {
   price: string,
   currency: string,
   rating: number,
-  installments: any
+  installments: any,
+  amount?: number,
 }

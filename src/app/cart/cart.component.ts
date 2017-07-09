@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './cart.service';
-import { OrderService } from '../common/order.service';
 import { Product } from '../../app/models/product.interface';
 
 @Component({
@@ -12,7 +11,6 @@ export class CartComponent implements OnInit {
   products: Product[];
   constructor(
     private cartService: CartService,
-    private orderService: OrderService
   ) { }
   ngOnInit() {
     this.products = this.cartService.get();
@@ -21,6 +19,6 @@ export class CartComponent implements OnInit {
     this.cartService.remove(order);
   }
   getTotalAmount(orders) {
-    return this.orderService.getTotalAmount(orders);
+    return this.cartService.getTotalAmount(orders);
   }
 }

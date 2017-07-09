@@ -20,4 +20,9 @@ export class CartService {
   remove(product){
     _.remove(this.orders, (p) => p.sku === product.sku);
   }
+  getTotalAmount(orders) {
+    return orders.reduce((sum, order) => {
+      return sum + order.amount
+    }, 0);
+  }
 }

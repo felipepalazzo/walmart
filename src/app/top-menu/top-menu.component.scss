@@ -24,9 +24,10 @@
   .top-menu__cart {
     background-color: $orange;
     color: $white;
+    cursor: pointer;
     float: right;
     font-size: 30px;
-    height: 100%;
+    height: 60px;
     position: relative;
     width: 68px;
     z-index: 100;

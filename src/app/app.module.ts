@@ -11,6 +11,7 @@ import { CartComponent } from './cart/cart.component';
 
 import { CartService } from './cart/cart.service';
 import { ProductListService } from './product-list/product-list.service';
+import { OrderService } from './common/order.service';
 
 const routes: Routes = [
   { path: '', component: ProductListComponent, pathMatch: 'full' },
@@ -32,6 +33,7 @@ const routes: Routes = [
   providers: [
     ProductListService,
     CartService,
+    OrderService,
   ],
   bootstrap: [AppComponent]
 })

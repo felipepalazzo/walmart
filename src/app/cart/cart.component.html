@@ -1,11 +1,21 @@
-carrinho:
-<ul>
-  <li *ngFor="let product of products">
-    <img [src]="product.image">
-    <span>{{ product.title }}</span>
-    <span>Quantidade: {{ product.amount }}</span>
-    <span (click)="remove(product)">
-      <i class="fa fa-times"></i>
-    </span>
-  </li>
-</ul>
+<nav class="side-menu">
+  <div class="side-menu__header" [ngPlural]="getTotalAmount(products)">
+    Meu carrinho
+    <ng-template ngPluralCase="=1">
+      (1 item)
+    </ng-template>
+    <ng-template ngPluralCase="other">
+      ({{ getTotalAmount(products) }} itens)
+    </ng-template>
+  </div>
+  <ul>
+    <li *ngFor="let product of products">
+      <img [src]="product.image">
+      <span>{{ product.title }}</span>
+      <span>Quantidade: {{ product.amount }}</span>
+      <span (click)="remove(product)">
+        <i class="fa fa-times"></i>
+      </span>
+    </li>
+  </ul>
+</nav>

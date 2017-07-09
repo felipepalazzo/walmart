@@ -1,4 +1,5 @@
-<nav class="side-menu">
+<div class="backdrop" [class.fade]="isVisible()" (click)="toggleMenu()"></div>
+<nav class="side-menu" [class.slide]="isVisible()">
   <div class="side-menu__header" [ngPlural]="getTotalAmount(products)">
     Meu carrinho
     <ng-template ngPluralCase="=1">

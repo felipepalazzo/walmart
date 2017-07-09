@@ -5,6 +5,7 @@ import _ from "lodash";
 @Injectable()
 export class CartService {
   orders: Product[] = [];
+  isVisible: boolean = false;
   get() {
     return this.orders;
   }
@@ -24,5 +25,11 @@ export class CartService {
     return orders.reduce((sum, order) => {
       return sum + order.amount
     }, 0);
+  }
+  getCartStatus() {
+    return this.isVisible;
+  }
+  toggleCart() {
+    this.isVisible = !this.isVisible;
   }
 }

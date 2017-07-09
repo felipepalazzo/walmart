@@ -2,8 +2,13 @@
   <div class="top-menu__logo-wrap">
     <span class="top-menu__logo"></span>
   </div>
-  <div class="top-menu__cart abs-center">
-    <span class="top-menu__counter text-center" [class.hidden]="!orders.length">
+  <div
+    class="top-menu__cart abs-center"
+    (click)="toggleMenu()"
+    [class.fixed]="isFixed()">
+    <span
+      class="top-menu__counter text-center"
+      [class.hidden]="!orders.length">
       {{ getTotalAmount(orders) }}
     </span>
     <i class="fa fa-shopping-cart"></i>

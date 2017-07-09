@@ -18,4 +18,10 @@ export class TopMenuComponent implements OnInit {
   getTotalAmount(orders) {
     return this.cartService.getTotalAmount(orders);
   }
+  toggleMenu() {
+    this.cartService.toggleCart();
+  }
+  isFixed() {
+    return this.cartService.getCartStatus();
+  }
 }

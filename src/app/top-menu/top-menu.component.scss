@@ -31,6 +31,12 @@
     position: relative;
     width: 68px;
     z-index: 100;
+
+    &.fixed {
+      position: fixed;
+      right: 0;
+      top: 0;
+    }
   }
 
   .top-menu__counter {

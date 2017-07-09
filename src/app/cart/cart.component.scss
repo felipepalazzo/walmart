@@ -5,8 +5,9 @@
   height: 100%;
   position: fixed;
   right: 0;
-  transform: translateX(0);
-  width: 350px;
+  transform: translateX($sidemenu-width);
+  transition: all .3s ease;
+  width: $sidemenu-width;
   z-index: 99;
 
   .side-menu__header {
@@ -15,6 +16,10 @@
     display: flex;
     height: 60px;
     padding-left: 15px;
+  }
+
+  &.slide {
+    transform: translateX(0);
   }
 }
 
@@ -48,6 +53,19 @@
   .side-menu__list-item {
     border-bottom: solid 1px $lightgrey;
     padding-left: 15px;
-    width: 335px;
+    width: $sidemenu-width - 15px;
+  }
+}
+
+.backdrop {
+  background-color: $shadow;
+  position: absolute;
+  transition: opacity .15s linear;
+  z-index: 98;
+
+  &.fade {
+    height: 100%;
+    opacity: 1;
+    width: 100%;
   }
 }

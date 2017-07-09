@@ -3,7 +3,6 @@ import { Price } from '../../models/price.interface';
 
 @Component({
   selector: 'price-detail',
-  styleUrls: ['./price-detail.component.scss'],
   template: `
     <div class="font-sm text-grey">
       <span>{{ price.installmentAmount }}</span>x de
